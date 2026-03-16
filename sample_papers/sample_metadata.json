@@ -1,0 +1,32 @@
+[
+  {
+    "id": "demo-001",
+    "title": "Attention Is All You Need",
+    "authors": ["Ashish Vaswani", "Noam Shazeer", "Niki Parmar", "Jakob Uszkoreit"],
+    "year": 2017,
+    "abstract": "We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train.",
+    "key_concepts": ["attention mechanism", "transformer architecture", "self-attention", "multi-head attention", "positional encoding", "machine translation", "sequence transduction"],
+    "methods": ["scaled dot-product attention", "multi-head attention", "position-wise feed-forward networks"],
+    "citations": ["Bahdanau et al. (2015)", "LeCun et al. (2015)", "Sutskever et al. (2014)"]
+  },
+  {
+    "id": "demo-002",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": ["Jacob Devlin", "Ming-Wei Chang", "Kenton Lee", "Kristina Toutanova"],
+    "year": 2019,
+    "abstract": "We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers.",
+    "key_concepts": ["BERT", "pre-training", "fine-tuning", "masked language model", "next sentence prediction", "bidirectional transformer", "NLP"],
+    "methods": ["masked language modeling", "next sentence prediction", "transfer learning"],
+    "citations": ["Vaswani et al. (2017)", "Peters et al. (2018)", "Radford et al. (2018)"]
+  },
+  {
+    "id": "demo-003",
+    "title": "Deep Residual Learning for Image Recognition",
+    "authors": ["Kaiming He", "Xiangyu Zhang", "Shaoqing Ren", "Jian Sun"],
+    "year": 2016,
+    "abstract": "We present a residual learning framework to ease the training of networks that are substantially deeper than those used previously. We explicitly reformulate the layers as learning residual functions with reference to the layer inputs, instead of learning unreferenced functions.",
+    "key_concepts": ["residual learning", "deep neural networks", "skip connections", "image recognition", "convolutional neural networks", "batch normalization"],
+    "methods": ["residual blocks", "skip connections", "batch normalization", "stochastic gradient descent"],
+    "citations": ["LeCun et al. (1998)", "Krizhevsky et al. (2012)", "Simonyan et al. (2015)"]
+  }
+]

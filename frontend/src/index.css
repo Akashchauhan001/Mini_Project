@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ══════════════════════════════════════════
+   ARID Platform – Global Styles
+   Academic Research Intelligence Interface
+══════════════════════════════════════════ */
+
+:root {
+  --sidebar-width: 256px;
+  --topbar-height: 64px;
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base */
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-surface-950 text-slate-100 font-sans antialiased;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+body.light {
+  @apply bg-surface-50 text-slate-900;
+}
+
+/* ── Scrollbar ─────────────────────────────*/
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { @apply bg-transparent; }
+::-webkit-scrollbar-thumb { @apply bg-surface-700 rounded-full; }
+::-webkit-scrollbar-thumb:hover { @apply bg-arid-600; }
+
+/* ══ Component Layer ══════════════════════ */
+@layer components {
+  /* ── Buttons ── */
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-lg font-medium text-sm
+           transition-all duration-200 cursor-pointer select-none outline-none
+           disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-arid-600 hover:bg-arid-500 text-white shadow-glow-sm hover:shadow-glow
+           active:scale-95;
+  }
+  .btn-secondary {
+    @apply btn bg-surface-800 hover:bg-surface-700 text-slate-300 hover:text-white
+           border border-surface-700 hover:border-surface-600 active:scale-95;
+  }
+  .btn-ghost {
+    @apply btn text-slate-400 hover:text-white hover:bg-surface-800 active:scale-95;
+  }
+  .btn-danger {
+    @apply btn bg-rose-600/20 hover:bg-rose-600/40 text-rose-400 border border-rose-600/30
+           hover:border-rose-500 active:scale-95;
+  }
+
+  /* ── Cards ── */
+  .card {
+    @apply bg-surface-900 border border-surface-700/50 rounded-xl p-5
+           shadow-card transition-all duration-200;
+  }
+  .card-hover {
+    @apply card hover:border-arid-600/40 hover:shadow-glow-sm hover:-translate-y-0.5;
+  }
+
+  /* ── Input ── */
+  .input {
+    @apply w-full bg-surface-800 border border-surface-700 rounded-lg px-4 py-2.5 text-sm
+           text-slate-200 placeholder-slate-500 outline-none transition-all duration-200
+           focus:border-arid-500 focus:ring-2 focus:ring-arid-500/20;
+  }
+
+  /* ── Badge / Tag ── */
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-blue   { @apply badge bg-arid-600/20 text-arid-300 border border-arid-600/30; }
+  .badge-purple { @apply badge bg-purple-600/20 text-purple-300 border border-purple-600/30; }
+  .badge-teal   { @apply badge bg-teal-600/20 text-teal-300 border border-teal-600/30; }
+  .badge-amber  { @apply badge bg-amber-600/20 text-amber-300 border border-amber-600/30; }
+  .badge-rose   { @apply badge bg-rose-600/20 text-rose-300 border border-rose-600/30; }
+  .badge-green  { @apply badge bg-green-600/20 text-green-300 border border-green-600/30; }
+
+  /* ── Divider ── */
+  .divider {
+    @apply border-t border-surface-800 my-4;
+  }
+
+  /* ── Sidebar link ── */
+  .nav-link {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-slate-400 hover:text-white hover:bg-surface-800 transition-all duration-150
+           cursor-pointer select-none;
+  }
+  .nav-link.active {
+    @apply bg-arid-600/20 text-arid-300 border border-arid-600/20;
+  }
+
+  /* ── Loading spinner ── */
+  .spinner {
+    @apply animate-spin rounded-full border-2 border-surface-700 border-t-arid-500;
+  }
+
+  /* ── Section header ── */
+  .section-title {
+    @apply text-lg font-semibold text-slate-100 tracking-tight;
+  }
+  .section-subtitle {
+    @apply text-sm text-slate-500 mt-0.5;
+  }
+
+  /* ── Gradient text ── */
+  .gradient-text {
+    @apply bg-gradient-to-r from-arid-400 via-purple-400 to-accent-teal bg-clip-text text-transparent;
+  }
+}
+
+/* ══ Custom Styles ═══════════════════════ */
+
+/* Graph container */
+.graph-container svg {
+  @apply w-full h-full;
+}
+
+/* Chat messages */
+.chat-message-user {
+  @apply ml-auto bg-arid-600/30 border border-arid-600/30 text-slate-100 rounded-2xl rounded-tr-sm
+         px-4 py-3 max-w-[80%] text-sm;
+}
+.chat-message-assistant {
+  @apply mr-auto bg-surface-800 border border-surface-700 text-slate-200 rounded-2xl rounded-tl-sm
+         px-4 py-3 max-w-[80%] text-sm;
+}
+
+/* Upload drop zone */
+.dropzone-active {
+  @apply border-arid-500 bg-arid-500/5 shadow-glow-sm;
+}
+
+/* Progress bar */
+.progress-bar {
+  @apply h-1.5 bg-surface-700 rounded-full overflow-hidden;
+}
+.progress-fill {
+  @apply h-full bg-gradient-to-r from-arid-500 to-purple-500 rounded-full
+         transition-all duration-300;
+}
+
+/* Landing page gradient blob */
+.blob {
+  @apply absolute rounded-full opacity-10 blur-3xl pointer-events-none;
+}
+
+/* Animated underline for links */
+.link-underline {
+  @apply relative after:absolute after:bottom-0 after:left-0 after:h-px after:w-0
+         after:bg-arid-400 after:transition-all after:duration-300 hover:after:w-full;
+}
+
+/* Paper card status indicator */
+.status-dot {
+  @apply w-2 h-2 rounded-full;
+}
+.status-dot.processed { @apply bg-green-400; }
+.status-dot.pending   { @apply bg-amber-400; }
+.status-dot.error     { @apply bg-rose-400; }
+
+/* ── Animations ───────────────────────── */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+.float { animation: float 4s ease-in-out infinite; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+.skeleton {
+  @apply bg-surface-800 rounded;
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 200% auto;
+  animation: shimmer 1.5s infinite;
+}

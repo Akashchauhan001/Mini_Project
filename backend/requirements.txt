@@ -1,0 +1,19 @@
+flask==3.0.3
+flask-cors==4.0.1
+werkzeug==3.0.3
+
+# PDF Parsing
+PyPDF2==3.0.1
+pdfminer.six==20231228
+
+# Knowledge Graph
+networkx==3.3
+
+# Optional AI API
+openai>=1.0.0
+
+# Database
+neo4j==5.24.0
+
+# Utilities
+python-dotenv==1.0.1
