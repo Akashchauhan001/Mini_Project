@@ -62,6 +62,9 @@ def init_db():
     logger.info("SQLite DB initialized")
 
 
+# Run at import time so gunicorn workers initialize the DB
+init_db()
+
 def get_db():
     conn = sqlite3.connect(SQLITE_DB_PATH)
     conn.row_factory = sqlite3.Row
@@ -509,5 +512,7 @@ def serve_upload(filename):
 # ── Main ──────────────────────────────────────
 if __name__ == "__main__":
     init_db()
-    logger.info("ARID Platform API starting on http://localhost:5000")
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    debug = os.environ.get("FLASK_ENV", "development") == "development"
+    logger.info(f"ARID Platform API starting on http://0.0.0.0:{port}")
+    app.run(debug=debug, host="0.0.0.0", port=port)
